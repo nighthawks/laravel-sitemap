@@ -53,5 +53,7 @@ return [
      * which urls should be crawled for the sitemap.
      */
     'crawl_profile' => Profile::class,
+    
+    'set_default_tags' => true,
 
 ];
