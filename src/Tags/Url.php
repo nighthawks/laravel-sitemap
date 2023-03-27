@@ -37,10 +37,12 @@ class Url extends Tag
     public function __construct(string $url)
     {
         $this->url = $url;
-
-        $this->lastModificationDate = Carbon::now();
-
-        $this->changeFrequency = static::CHANGE_FREQUENCY_DAILY;
+        
+        if (config('sitemap.set_default_tags')) {
+            $this->lastModificationDate = Carbon::now();
+            
+            $this->changeFrequency = static::CHANGE_FREQUENCY_DAILY;
+        }
     }
 
     public function setUrl(string $url = ''): static
